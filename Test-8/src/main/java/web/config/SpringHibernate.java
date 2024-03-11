@@ -43,7 +43,7 @@ public class SpringHibernate {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         entityManagerFactoryBean.setDataSource(getDataSource());
-        entityManagerFactoryBean.setPackagesToScan("web.config.model");
+        entityManagerFactoryBean.setPackagesToScan("web.model");
         entityManagerFactoryBean.setJpaProperties(jpaHibernateProperties());
         return entityManagerFactoryBean;
     }

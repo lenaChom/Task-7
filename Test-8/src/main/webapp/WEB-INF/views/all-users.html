@@ -29,10 +29,10 @@
             <td><span th:text="${user.department}"></span></td>
             <td><span th:text="${user.salary}"></span></td>
             <td class="operations-cell">
-                <form th:action="@{/updateInfo(id=${user.id})}" method="post" class="form-inline">
-                    <input type="submit" value="Update">
-                    <input type="hidden" name="id" th:value="${user.id}">
-                </form>
+                <form th:action="@{/updateUser(id=${user.id})}" method="post" class="form-inline">
+                                    <input type="submit" value="Update">
+                                    <input type="hidden" name="id" th:value="${user.id}">
+                                </form>
                 <form th:action="@{/deleteUser(id=${user.id})}" method="post" class="form-inline">
                     <input type="submit" value="Delete">
                     <input type="hidden" name="id" th:value="${user.id}">
@@ -44,3 +44,6 @@
 <input type="submit" value="Add" onclick="window.location.href = 'addNewUser'"/>
 </body>
 </html>
+
+
+

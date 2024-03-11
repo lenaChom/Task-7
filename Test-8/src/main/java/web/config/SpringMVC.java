@@ -1,6 +1,7 @@
 package web.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+import web.config.SpringConfig;
 
 public class SpringMVC extends AbstractAnnotationConfigDispatcherServletInitializer {
     // Метод, указывающий на класс конфигурации

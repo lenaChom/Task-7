@@ -1,14 +1,12 @@
-package web.config.controller;
+package web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import web.config.dao.UserDao;
-import web.config.model.User;
-import web.config.service.UserService;
+import web.model.User;
+import web.service.UserService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -37,11 +35,17 @@ public class MyController {
         return "redirect:/";
     }
 
-    @RequestMapping("/updateInfo")
-    public String updateUser(@RequestParam("id") long id, Model model) {
+    @RequestMapping("/updateUser")
+    public String updateUserForm(@RequestParam("id") long id, Model model) {
         User user = userService.getUser(id);
         model.addAttribute("user", user);
-        return "user-info";
+        return "editUser";
+    }
+
+    @PostMapping("/editUser")
+    public String updateUser(@ModelAttribute("user") User user) {
+        userService.updateUser(user);
+        return "redirect:/";
     }
 
     @RequestMapping("/deleteUser")
