@@ -6,7 +6,6 @@
 </head>
 <body>
 <h2>User info</h2>
-
 <form th:method="POST" th:action="@{editUser}" th:object="${user}">
 
   <input name="id" th:field="*{id}" th:value="${user.id}" hidden="hidden">

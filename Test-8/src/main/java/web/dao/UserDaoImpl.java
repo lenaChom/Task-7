@@ -5,6 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 import web.model.User;
 
 import javax.persistence.EntityManager;
+import javax.persistence.OrderBy;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class UserDaoImpl implements UserDao{
 
     @Override
     public List<User> showAllUsers() {
-        return entityManager.createQuery("select u from User u", User.class).getResultList();
+        return entityManager.createQuery("select u from User u order by id", User.class).getResultList();
     }
 
     @Override
